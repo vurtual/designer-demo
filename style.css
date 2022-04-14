@@ -1,0 +1,333 @@
+:root {
+  --primary-color: hsl(210, 43%, 98%);
+  --secondary-color: hsl(0, 0%, 10%);
+  --border-color: hsl(0, 0%, 80%);
+  --header-height: 30px;
+  --designer-nav-height: 22px;
+  --dimensions-primary: hsl(15, 100%, 95%);
+  --properties-primary: hsl(135, 100%, 95%);
+  --measures-primary: hsl(215, 100%, 95%);
+  --date-primary: hsl(305, 100%, 95%);
+  --not-droppable-primary: hsl(0, 0%, 98%);
+  --dimensions-secondary: hsl(15, 100%, 77%);
+  --properties-secondary: hsl(135, 100%, 77%);
+  --measures-secondary: hsl(215, 100%, 77%);
+  --date-secondary: hsl(305, 100%, 77%);
+  --not-droppable-secondary: hsl(0, 0%, 87%);
+}
+
+body,
+html {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: arial;
+  font-weight: lighter;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  padding: none;
+}
+
+header {
+  width: 100vw;
+  height: var(--header-height);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  margin-top: 0;
+  padding: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  font-size: 0.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.designer {
+  left: 0;
+  height: calc(100vh - var(--header-height));
+  width: 100vw;
+  padding: none;
+  margin: none;
+  position: fixed;
+  top: 30px;
+  left: 0;
+}
+
+.designer-nav {
+  height: var(--designer-nav-height);
+  width: 100vw;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: none;
+  padding: none;
+}
+
+.designer-nav > button {
+  position: relative;
+  margin: none;
+  height: var(--designer-nav-height);
+  background-color: transparent;
+  padding-inline: 0.6em;
+  border-width: 0px;
+}
+
+button.active {
+  background-color: hsl(240, 100%, 87%);
+}
+
+.panels-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.panels-vertical {
+  display: flex;
+  align-items: flex-start;
+}
+
+.panel {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+}
+
+.panel h3 {
+  font-size: 0.8em;
+  padding: 0 0 0.3em;
+  width: 100%;
+  text-align: center;
+}
+
+.panels-horizontal .panel {
+  flex-direction: column;
+}
+
+.dimensions {
+  width: 22vw;
+  height: calc(100vh - 40px);
+  background-color: var(--dimensions-primary);
+  display: flex;
+  align-items: center;
+}
+
+.panel button {
+  width: 90%;
+  height: 23px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel button .text {
+  width: 100%;
+}
+
+.panel button .remove {
+  font-weight: bold;
+  height: 23px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  transform: translate(1px, 2px);
+}
+
+.dimensions button {
+  border: 2px solid var(--dimensions-secondary);
+  background-color: var(--dimensions-primary);
+}
+
+.dimensions button .remove {
+  background-color: var(--dimensions-secondary);
+}
+
+.properties button {
+  border: 2px solid var(--properties-secondary);
+  background-color: var(--properties-primary);
+}
+
+.properties button .remove {
+  background-color: var(--properties-secondary);
+}
+
+.measures button {
+  border: 2px solid var(--measures-secondary);
+  background-color: var(--measures-primary);
+}
+
+.measures button .remove {
+  background-color: var(--measures-secondary);
+}
+
+.date button {
+  border: 2px solid var(--date-secondary);
+  background-color: var(--date-primary);
+}
+
+.date button .remove {
+  background-color: var(--date-secondary);
+}
+
+.data-items {
+  height: calc((100vh - 70px) / 2);
+}
+
+.properties {
+  width: 26vw;
+  height: calc((100vh - 70px) / 2);
+  background-color: var(--properties-primary);
+}
+
+.measures {
+  width: 26vw;
+  height: calc((100vh - 70px) / 2);
+  background-color: var(--measures-primary);
+}
+
+.date {
+  width: 26vw;
+  height: calc((100vh - 70px) / 2);
+  background-color: var(--date-primary);
+}
+
+.measures[data-status='not-droppable'],
+.date[data-status='not-droppable'] {
+  background-color: var(--not-droppable-secondary);
+  color: var(--not-droppable-primary);
+}
+
+.measures[data-status='not-droppable'] button,
+.date[data-status='not-droppable'] button {
+  background-color: var(--not-droppable-primary);
+  border-color: var(--not-droppable-secondary);
+  color: var(--not-droppable-secondary);
+}
+
+.measures[data-status='not-droppable'] button .remove,
+.date[data-status='not-droppable'] button .remove {
+  background-color: var(--not-droppable-secondary);
+  color: var(--not-droppable-primary);
+}
+
+.data {
+  border-width: 0px;
+}
+
+.scroll-area {
+  width: 95%;
+  height: 90%;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffffaa;
+}
+
+table {
+  margin: 0px;
+  padding: 0px;
+}
+
+th {
+  font-size: 0.8em;
+  padding-inline: 0.3em;
+  min-width: 5em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.2em;
+  padding-top: 1.4em;
+}
+td {
+  font-size: 0.7em;
+  padding-inline: 0.6em;
+}
+
+td[data-type='string'] {
+  text-align: left;
+}
+
+td[data-type='date'] {
+  text-align: center;
+}
+
+td[data-type='numeric'] {
+  text-align: right;
+}
+
+th[data-allocatedto='dimensions'] {
+  background-color: var(--dimensions-primary);
+}
+
+th[data-allocatedto='properties'] {
+  background-color: var(--properties-primary);
+}
+
+th[data-allocatedto='measures'] {
+  background-color: var(--measures-primary);
+}
+
+th[data-allocatedto='date'] {
+  background-color: var(--date-primary);
+}
+
+th::after {
+  position: fixed;
+  content: '';
+  height: 1.2em;
+  width: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 2px solid white;
+  border-radius: 100%;
+  transform: translate(-2px, -33px);
+}
+
+th[data-allocatedto='none']::after {
+  background-color: #f55;
+}
+th[data-allocatedto='dimensions']::after {
+  content: 'D';
+  background-color: var(--dimensions-secondary);
+}
+
+th[data-allocatedto='properties']::after {
+  content: 'P';
+  background-color: var(--properties-secondary);
+}
+
+th[data-allocatedto='measures']::after {
+  content: 'M';
+  background-color: var(--measures-secondary);
+}
+
+th[data-allocatedto='date']::after {
+  content: 'd';
+  background-color: var(--date-secondary);
+}
+
+.draggable {
+  position: fixed;
+  border: 1px solid var(--border-color);
+  z-index: 100;
+  background-color: #fffa;
+  padding: 0.3em 0.8em;
+  border-radius: 2px;
+}

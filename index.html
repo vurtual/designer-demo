@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designer Improvements DEMO</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="main-nav">
+        <h2>Some Text</h2>
+      </div>
+    </header>
+    <div class="designer panels-horizontal">
+      <div class="designer-nav">
+        <button class="active">Design</button>
+        <button>Build</button>
+        <button>Versions</button>
+      </div>
+      <div class="panels-vertical">
+        <div class="dimensions panel">
+          <h3>Dimensions</h3>
+          <div class="scroll-area">
+            <button data-index="0">
+              <div class="text">Data1</div>
+              <div class="remove">X</div>
+            </button>
+          </div>
+        </div>
+        <div class="panels-horizontal">
+          <div class="data-items panels-vertical">
+            <div class="properties panel">
+              <h3>Properties</h3>
+              <div class="scroll-area">
+                <button data-index="1">
+                  <div class="text">Data2</div>
+                  <div class="remove">X</div>
+                </button>
+              </div>
+            </div>
+            <div class="measures panel" data-status="droppable">
+              <h3>Measures</h3>
+              <div class="scroll-area">
+                <button data-index="2">
+                  <div class="text">Data3</div>
+                  <div class="remove">X</div>
+                </button>
+              </div>
+            </div>
+            <div class="date panel" data-status="droppable">
+              <h3>Date</h3>
+              <div class="scroll-area">
+                <button data-index="3">
+                  <div class="text">Data4</div>
+                  <div class="remove">X</div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="data panel">
+            <table>
+              <thead>
+                <th data-allocatedto="dimensions" data-type="string">Data1</th>
+                <th data-allocatedto="properties" data-type="numeric">Data2</th>
+                <th data-allocatedto="measures" data-type="string">Data3</th>
+                <th data-allocatedto="date" data-type="date">Data4</th>
+                <th data-allocatedto="none" data-type="string">Data5</th>
+                <th data-allocatedto="none" data-type="numeric">Data6</th>
+                <th data-allocatedto="none" data-type="numeric">Data7</th>
+                <th data-allocatedto="none" data-type="string">Data8</th>
+                <th data-allocatedto="none" data-type="date">Data9</th>
+                <th data-allocatedto="none" data-type="string">DataA</th>
+                <th data-allocatedto="none" data-type="string">DataB</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">123</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">13 Oct 21</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">3</td>
+                  <td data-type="string">23.90</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">2 Feb 22</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="string">thing</td>
+                </tr>
+                <tr>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">123</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">13 Oct 21</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">3</td>
+                  <td data-type="string">23.90</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">2 Feb 22</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="string">thing</td>
+                </tr>
+                <tr>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">123</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">13 Oct 21</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">3</td>
+                  <td data-type="string">23.90</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">2 Feb 22</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="string">thing</td>
+                </tr>
+                <tr>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">123</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">13 Oct 21</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">3</td>
+                  <td data-type="string">23.90</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">2 Feb 22</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="string">thing</td>
+                </tr>
+                <tr>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">123</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">13 Oct 21</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="numeric">3</td>
+                  <td data-type="string">23.90</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="date">2 Feb 22</td>
+                  <td data-type="string">thing</td>
+                  <td data-type="string">thing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <template class="button-template">
+      <button data-index>
+        <div class="text"></div>
+        <div class="remove">X</div>
+      </button>
+    </template>
+    <template class="options-template">
+      <div class="options">
+        <select name="options">
+          <option value="dimensions">Dimensions</option>
+          <option value="properties">Properties</option>
+          <option value="measures">Measures</option>
+          <option value="date">Date</option>
+        </select>
+      </div>
+    </template>
+  </body>
+</html>
